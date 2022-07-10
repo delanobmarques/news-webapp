@@ -1,8 +1,9 @@
-import { useContext } from 'react'
-import { NewsContext } from '../../context/news.context'
+import { useContext } from 'react';
+import { NewsContext } from '../../context/news.context';
 import NewsArticle from '../NewsArticle/news-article.component';
+import './news.styles.scss';
 
-const News = (props) => {
+const News = () => {
     const { data } = useContext(NewsContext);
     
   return(

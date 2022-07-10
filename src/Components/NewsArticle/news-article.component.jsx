@@ -1,19 +1,34 @@
 import React from 'react';
+import './news-article.styles.scss';
 
 const NewsArticle = ({data}) => {
   return (
-    <div className="news-article-card">
-        <h1>{data.title}</h1>
-        <h3>{data.author && `${data.author} - `} {data.source.name}</h3>
-        <h2>Published at {data.publishedAt}</h2>
-        <img src={data.urlToImage} alt={data.title} />
-        <p>{data.description}</p>
-        <a href={data.url} target="blank">Read more...</a>
+    <div className="news-article__card">
+        <div className="news-article__thumbnail">
+            <img src={data.urlToImage} alt={data.title} />
+        </div>
+        <div className="news-article__body"> 
+            <div className="news-article__body__published-at">Published at {data.publishedAt.slice(0,10)}</div>       
+            <div className="news-article__body__title">{data.title}</div>
+            <div className="news-article__body__author">
+                {data.author && `${data.author} - `} {data.source.name}
+            </div>
+            <p className="news-article__body__description">
+                {data.description}
+                <a className="read-more" href={data.url} target="blank">read more</a>
+            </p>            
+        </div>
     </div>
   )
 }
 
 export default NewsArticle;
+
+
+
+
+
+
 
 // <div class="content-wrapper">
   
